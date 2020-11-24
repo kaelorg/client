@@ -24,8 +24,9 @@ class ChannelExtendedStructure
   ): Promise<Message> | undefined {
     if (!content) return;
 
-    const embed = new ClientEmbedStructure(author)
+    const embed = new ClientEmbedStructure()
       .error()
+      .setUser(author)
       .setTitle('Poing-oing...');
 
     if (typeof content === 'string') {
