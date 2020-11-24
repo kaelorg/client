@@ -1,0 +1,55 @@
+{
+  "titles": {
+    "error": "Kael | Erro"
+  },
+  "subjects": {
+    "with": "com",
+    "true": "sim",
+    "false": "não",
+    "trueCapitalized": "Sim",
+    "falseCapitalized": "Não"
+  },
+  "economy": {
+    "charisma": "carisma",
+    "reputation": "reputação",
+    "perfection": "perfeição",
+    "intelligence": "inteligência",
+    "charismaPlural": "carismas",
+    "reputationPlural": "reputações",
+    "perfectionPlural": "perfeições",
+    "intelligencePlural": "inteligências"
+  },
+  "permissions": {
+    "CREATE_INSTANT_INVITE": "Criar Convite Instantâneo",
+    "KICK_MEMBERS": "Kickar Membros",
+    "BAN_MEMBERS": "Banir Membros",
+    "ADMINISTRATOR": "Administrador",
+    "MANAGE_CHANNELS": "Gerenciar Canais",
+    "MANAGE_GUILD": "Gerenciar Servidor",
+    "ADD_REACTIONS": "Adicionar Reações",
+    "VIEW_AUDIT_LOG": "Exibir Log de Auditoria",
+    "PRIORITY_SPEAKER": "Prioridade para Falar",
+    "STREAM": "Fazer Lives",
+    "VIEW_CHANNEL": "Ver Canal",
+    "SEND_MESSAGES": "Enviar Mensagens",
+    "SEND_TTS_MESSAGES": "Enviar Mensagens TTS",
+    "MANAGE_MESSAGES": "Gerenciar Mensagens",
+    "EMBED_LINKS": "Incorporar Links",
+    "ATTACH_FILES": "Anexar Arquivos",
+    "READ_MESSAGE_HISTORY": "Ler Histórico de Mensagens",
+    "MENTION_EVERYONE": "Mencionar Todos",
+    "USE_EXTERNAL_EMOJIS": "Usar Emojis Externos",
+    "VIEW_GUILD_INSIGHTS": "Ver Estatísticas do Servidor",
+    "CONNECT": "Conectar",
+    "SPEAK": "Falar",
+    "MUTE_MEMBERS": "Mutar Membros",
+    "DEAFEN_MEMBERS": "Ensurdecer Membros",
+    "MOVE_MEMBERS": "Mover Membros",
+    "USE_VAD": "Usar Atividade de Voz",
+    "CHANGE_NICKNAME": "Alterar Apelido",
+    "MANAGE_NICKNAMES": "Gerenciar Apelidos",
+    "MANAGE_ROLES": "Gerenciar Cargos",
+    "MANAGE_WEBHOOKS": "Gerenciar Webhooks",
+    "MANAGE_EMOJIS": "Gerenciar Emojis"
+  }
+}

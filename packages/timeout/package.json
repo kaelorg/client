@@ -1,0 +1,13 @@
+{
+  "name": "@packages/timeout",
+  "version": "1.0.0",
+  "license": "AGPL-3.0",
+  "main": "build/index.js",
+  "module": "build/index.js",
+  "types": "typings/index.d.ts",
+  "repository": {
+    "type": "git",
+    "directory": "packages/timeout",
+    "url": "git+https://github.com/kaeltec/client.git"
+  }
+}

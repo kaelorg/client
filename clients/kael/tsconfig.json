@@ -1,0 +1,26 @@
+{
+  "extends": "../../tsconfig.json",
+  "include": ["src/**/*", "src/**/*.json", "../../@types"],
+  "compilerOptions": {
+    "baseUrl": "src",
+    "outDir": "build",
+    "declarationDir": "typings",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "paths": {
+      "@root/*": ["*"],
+      "@app/*": ["app/*"],
+      "@core/*": ["core/*"],
+      "@utils/*": ["utils/*"],
+      "@start/*": ["start/*"],
+      "@config/*": ["config/*"],
+      "@interfaces/*": ["interfaces/*"],
+      "@interfaces": ["interfaces/index"]
+    },
+    "plugins": [
+      {
+        "transform": "@zerollup/ts-transform-paths"
+      }
+    ]
+  }
+}

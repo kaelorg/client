@@ -1,0 +1,28 @@
+name: Crowdin Update
+
+on:
+  push:
+    branches: ['master']
+
+jobs:
+  crowdin:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Set SSH Key
+        uses: webfactory/ssh-agent@v0.4.1
+        with:
+          ssh-private-key: ${{ secrets.SSH_TOKEN }}
+
+      - name: Clone and Push
+        uses: pablo1v/crowdin-updater@master
+        with:
+          target-repository: git@github.com:Kaeltec/localization.git
+          locale-path: clients/kael/src/app/localization/pt-BR
+          upload-path: src
+          user-name: KaelBot
+          user-email: support@kaelbot.xyz
+          commit-message: 'chore: update translate files'

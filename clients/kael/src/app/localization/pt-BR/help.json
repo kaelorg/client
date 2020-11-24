@@ -1,0 +1,263 @@
+{
+  "rolldice": {
+    "description": "Role um dado comum."
+  },
+  "serverinfo": {
+    "description": "Mostra informações do servidor."
+  },
+  "shard": {
+    "description": "Mostra em qual shard o servidor está."
+  },
+  "daily": {
+    "description": "Colete seu bônus diário e ganhe koins (A moeda do kael)."
+  },
+  "work": {
+    "description": "Trabalhe e consiga alguns trocados no Kael."
+  },
+  "bank": {
+    "description": "Obtenha o saldo líquido de koins do servidor."
+  },
+  "randomname": {
+    "description": "Gere um nome aleátorio de algum personagem de Harry Potter."
+  },
+  "help": {
+    "description": "Receba informações para visualizar minhas funções."
+  },
+  "balance": {
+    "description": "Visualize sua carteira com saldos de reputações e dinheiro."
+  },
+  "points": {
+    "description": "Tenha acesso ao ranking de pontos das casas."
+  },
+  "support": {
+    "description": "Detalhes e informações do bot."
+  },
+  "allpoints": {
+    "usage": "<@usuário>",
+    "description": "Dê super pontos a um usuário."
+  },
+  "serverbooster": {
+    "usage": "[@membro]",
+    "description": "Tenha a sua data de ativação do nitro booster no servidor ou de algum usuário."
+  },
+  "eval": {
+    "usage": "<código>",
+    "description": "Executa um código javascript."
+  },
+  "colorrole": {
+    "usage": "<@cargo> <#cor>",
+    "description": "Altera a cor do cargo inserido."
+  },
+  "userinfo": {
+    "usage": "[@usuário]",
+    "description": "Mostra informações de um usuário."
+  },
+  "deposit": {
+    "usage": "[all] | <valor>",
+    "description": "Tenha informações de como depositar seu dinheiro no banco."
+  },
+  "withdraw": {
+    "usage": "<valor>",
+    "description": "Retire um valor específico do seu banco para sua carteira."
+  },
+  "tankionline": {
+    "usage": "<jogador>",
+    "description": "Veja suas estatísticas no Tanki Online (EN) ou de um determinado jogador."
+  },
+  "ban": {
+    "usage": "<@membro> [motivo]",
+    "description": "Aplique um banimento em um determinado usuário."
+  },
+  "unban": {
+    "usage": "<@membro> [motivo]",
+    "description": "Remova o banimento de um usuário."
+  },
+  "kick": {
+    "usage": "<@membro> [motivo]",
+    "description": "Aplique uma expulsão em um determinado usuário."
+  },
+  "purge": {
+    "usage": "<quantidade ou id de uma mensagem>",
+    "description": "Apague um número específico de mensagens de um canal ou de uma mensagem específica utilizando o id da mesma."
+  },
+  "reputation": {
+    "usage": "<@usuário>",
+    "description": "Dê um ponto de reputação a um amiguinho(a)."
+  },
+  "perfection": {
+    "usage": "<@usuário>",
+    "description": "Dê um ponto de perfeição a um amiguinho(a)."
+  },
+  "charisma": {
+    "usage": "<@usuário>",
+    "description": "Dê um ponto de carisma a um amiguinho(a)."
+  },
+  "intelligence": {
+    "usage": "<@usuário>",
+    "description": "Dê um ponto de inteligência a um amiguinho(a). Dica: quanto mais pontos de inteligência, mais chance você tem de roubar."
+  },
+  "ranking": {
+    "usage": "[rep|perf|char|int]",
+    "description": "Visualize o ranking global dos pontos sociais."
+  },
+  "profile": {
+    "usage": "[@usuário]",
+    "description": "Visualize seu estiloso perfil ou de um amiguinho(a)."
+  },
+  "rob": {
+    "usage": "<@usuário>",
+    "description": "Consiga um dinheiro roubando de outro usuário."
+  },
+  "ping": {
+    "usage": "[shard]",
+    "description": "Mostra minha latência.",
+    "subcommands": {
+      "shard": {
+        "usage": "<id da shard>"
+      }
+    }
+  },
+  "avatar": {
+    "usage": "[server] | [@usuário] ",
+    "description": "Mostra seu avatar ou de um determinado usuário ou servidor.",
+    "subcommands": {
+      "server": {
+        "usage": "[id do servidor]"
+      }
+    }
+  },
+  "transfer": {
+    "usage": "[server] | <@usuário> <valor>",
+    "description": "Transfira koins do seu banco para seus amiguinhos.",
+    "subcommands": {
+      "server": {
+        "usage": "<id do servidor> <valor>"
+      }
+    }
+  },
+  "roleall": {
+    "usage": "[add|remove]",
+    "description": "Veja uma lista de informações de como usar o cargotodos.",
+    "subcommands": {
+      "add": {
+        "usage": "<@cargo 1> [@cargo 2]"
+      },
+      "remove": {
+        "usage": "<@cargo 1> [@cargo 2]"
+      }
+    }
+  },
+  "autorole": {
+    "usage": "[add|list|reset|remove]",
+    "description": "Veja uma lista de informações de como usar meu autocargo.",
+    "subcommands": {
+      "add": {
+        "usage": "<@cargo>"
+      },
+      "remove": {
+        "usage": "<@cargo>"
+      }
+    }
+  },
+  "vanity": {
+    "usage": "[add|list|vips|remove]",
+    "description": "Adicione seu vip em um amigo(a) ou tenha informações sobre usuários vips no servidor.",
+    "subcommands": {
+      "list": {
+        "usage": "[@membro]"
+      },
+      "add": {
+        "usage": "<@membro>"
+      },
+      "remove": {
+        "usage": "<@membro>"
+      }
+    }
+  },
+  "freeze": {
+    "usage": "[role|status|channel] | <@membro> <tempo> [motivo]",
+    "description": "Ban Congelante. Bana usuários do seu servidor sem os tirar do mesmo por tempo. O efeito do congelamento apenas remove permissões de ver canais de texto e voz e, apenas o canal de motivo fica visível. Usuários com permissões de Administração ou Gerenciar Canais são imunes.",
+    "subcommands": {
+      "channel": {
+        "usage": "<#canal>"
+      },
+      "role": {
+        "usage": "<@cargo>"
+      },
+      "status": {
+        "usage": "<@membro>"
+      }
+    }
+  },
+  "count": {
+    "usage": "[text|test|model|models|channel]",
+    "description": "Tenha uma lista de informações de como configurar o sistema de contador de membros.",
+    "subcommands": {
+      "text": {
+        "usage": "<texto>"
+      },
+      "channel": {
+        "usage": "<#canal>"
+      },
+      "model": {
+        "usage": "<nome/id do modelo>"
+      }
+    }
+  },
+  "houseroles": {
+    "usage": "[gryffindor|hufflepuff|ravenclaw|slytherin]",
+    "description": "Tenha acesso a uma lista de informações para configurar o cargo de uma determinada casa.",
+    "subcommands": {
+      "gryffindor": {
+        "usage": "<@cargo>"
+      },
+      "hufflepuff": {
+        "usage": "<@cargo>"
+      },
+      "ravenclaw": {
+        "usage": "<@cargo>"
+      },
+      "slytherin": {
+        "usage": "<@cargo>"
+      }
+    }
+  },
+  "housepoints": {
+    "usage": "[gryffindor|hufflepuff|ravenclaw|slytherin]",
+    "description": "Tenha acesso a uma lista de informações para adicionar ou remover pontos de uma determinada casa.",
+    "subcommands": {
+      "gryffindor": {
+        "usage": "<pontos>",
+        "subcommands": {
+          "remove": {
+            "usage": "<pontos>"
+          }
+        }
+      },
+      "hufflepuff": {
+        "usage": "<pontos>",
+        "subcommands": {
+          "remove": {
+            "usage": "<pontos>"
+          }
+        }
+      },
+      "ravenclaw": {
+        "usage": "<pontos>",
+        "subcommands": {
+          "remove": {
+            "usage": "<pontos>"
+          }
+        }
+      },
+      "slytherin": {
+        "usage": "<pontos>",
+        "subcommands": {
+          "remove": {
+            "usage": "<pontos>"
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,535 @@
+{
+  "shard": "O servidor **{{- guild}}** se encontra na shard **{{shard}}**.",
+  "ping": {
+    "ping": "Meu ping atual é **{{response}}ms**!",
+    "shard": {
+      "notExist": "A shard inserida não existe.",
+      "ping": "O ping da shard **{{shard}}** é **{{response}}ms**!"
+    }
+  },
+  "help": {
+    "title": "Kael, o melhor porquinho que seu servidor pode ter!",
+    "description": "[Razões para adicionar o Kael ao seu servidor.](https://medium.com/kaeltec/por-que-o-kael-3bf2d81b4177)",
+    "fields": [
+      {
+        "name": "Minhas funções e Dashboard",
+        "route": "commands"
+      },
+      {
+        "name": "Está precisando de ajuda ?",
+        "route": "support"
+      }
+    ]
+  },
+  "vanity": {
+    "author": "Kael | Sistema de cargo premium",
+    "description": "Esse é meu sistema de adição de vips para usuários premium no seu servidor. Acesse ao meu **[painel]({{- link}})** para configurar.",
+    "vips": {
+      "title": "Membros vip no servidor",
+      "noneUsers": "Nenhum membro adicionado..."
+    },
+    "list": {
+      "noneUsers": "Nenhum membro adicionado...",
+      "noVip": "**{{- member}}** não é um usuário vip no servidor.",
+      "noVipsAdded": "**{{- member}}** não tem usuário vip adicionado.",
+      "title": "Membros vip no servidor adicionado por **{{- member}}**"
+    },
+    "remove": {
+      "title": "Vip removido",
+      "noVip": "Você não é um usuário vip no servidor.",
+      "noUserVip": "O membro que você inseriu não é vip no servidor.",
+      "description": "O vip de **{{- member}}** foi removido com sucesso.",
+      "noAddedUserVip": "O membro que você inseriu não é vip adicionado por você."
+    },
+    "add": {
+      "by": "De",
+      "role": "Cargo",
+      "receivedBy": "Para",
+      "title": "Vip adicionado",
+      "timeLeft": "Tempo restante",
+      "noVip": "Você não é um usuário vip no servidor.",
+      "missingTime": "Você precisa inserir o tempo do vip.",
+      "alreadyGive": "Você já deu seu vip para **10** pessoas.",
+      "userAlreadyVip": "O membro que você inseriu já é vip no servidor."
+    }
+  },
+  "support": {
+    "title": "Kael um bot para gestão de servidores Discord.",
+    "website": "Website",
+    "websiteDesc": "Lista com meus comandos e acesso ao meu painel de configurações você encontra no meu [website](https://kaelbot.xyz).",
+    "server": "Servidor Discord",
+    "serverDesc": "[Servidor oficial do Kael](https://discord.gg/DBMvAzA)",
+    "contato": "Contato",
+    "contatoDesc": "Para assuntos comerciais tratar em **support@kaelbot.xyz**."
+  },
+  "avatar": {
+    "title": "Avatar de {{- user}}",
+    "titleServer": "Avatar do servidor **{{- guild}}**"
+  },
+  "userinfo": {
+    "constNick": "Sem apelido",
+    "title": "Informações de **{{- user}}**",
+    "nick": "Apelido",
+    "createdAt": "Conta criada em ",
+    "joinedAt": "Entrou no servidor em "
+  },
+  "serverinfo": {
+    "title": "Informações de {{- server}}",
+    "shardTitle": "Shard conectada",
+    "shardDesc": "Servidor conectado a shard **{{-shard}}** do kael.",
+    "owner": "<:GuildOwnerDiscord:750748809436332134> Proprietário(a)",
+    "idTitle": "ID do servidor",
+    "region": "Região do servidor",
+    "kael": "<:KaelRelogio:707764843720998923> Quando o kael entrou",
+    "kaelIn": "Em **{{-server}}**",
+    "server": "<:KaelRelogio:707764843720998923> Criação do servidor",
+    "serverIn": "Servidor criado em **{{-server}}**.",
+    "members": "<:MemberDiscord:750747226879426581> Membros no servidor",
+    "membersCount": "**{{-members}}** membros no servidor.",
+    "bots": "Robots",
+    "botsCount": "**{{-bots}}** robots no servidor.",
+    "channelsGuild": "Canais do servidor",
+    "channelText": "<:TextChannel:750747227076558908> Canais de texto",
+    "channelVoice": "<:VoiceChannel:750747227076690043> Canais de voz",
+    "channelNews": "<:NewsChannelDiscord:750747226745339905> Canais de anúncio",
+    "roles": "Cargos/Tags",
+    "rolesCount": "Há **{{-roles}}** cargos no servidor.",
+    "null": "Nenhum",
+    "membersStatus": "Status membros",
+    "membersOff": "Offline",
+    "membersIdle": "Ausentes",
+    "membersDnd": "Ocupados",
+    "membersOn": "Online"
+  },
+  "serverbooster": {
+    "noBooster": "{{- member}} não está impulsionando o servidor.",
+    "time": "<:1mes:725369380921409578> Impulsionando o servidor desde **{{time}}**!"
+  },
+  "roleall": {
+    "roles": "Cargos",
+    "estimatedTime": "Tempo estimado até o término",
+    "roleLimit": "Você só pode definir 5 cargos por comando!",
+    "hasProcess": "Já existe um processo em andamento. Aguarde até o mesmo ser finalizado!",
+    "notPermissions": "Não é possível manipular algum(s) cargo(s) definido(s). Verifique se meu cargo está acima do(s) cargo(s) definido(s).",
+    "awaitProcess": "<:KaelRelogio:707764843720998923> **|** Tudo certo, o processo já está em andamento. Isso pode levar algum tempo, mas, avisaremos quando estiver tudo pronto. Tempo estimado até o término: **{{time}}**.",
+    "remove": {
+      "author": "Kael | CargoTodos (Remover)",
+      "failed": "Nenhum usuário possui o cargo inserido.",
+      "success": "Cargo removido de **{{size}}** usuários.",
+      "failed_plural": "Nenhum usuário possui os cargos inseridos."
+    },
+    "add": {
+      "author": "Kael | CargoTodos (Adicionar)",
+      "success": "Cargo adicionado em **{{size}}** usuários.",
+      "failed": "Todos os usuários estam com o cargo inserido.",
+      "failed_plural": "Todos os usuários estam com os cargos inseridos."
+    },
+    "help": {
+      "author": "Ajuda | CargoTodos",
+      "addTitle": "roleall add <@cargo>",
+      "add": "Para adicionar um cargo a todos do servidor.",
+      "removeTitle": "roleall remover <@cargo>",
+      "remove": "Para remover um cargo a todos do servidor."
+    }
+  },
+  "kick": {
+    "reason": "Motivo",
+    "author": "Kael | Expulsão",
+    "noReason": "Não Especificado",
+    "description": "{{- author}} expulsou **{{- member}}**!",
+    "missingUserPermissions": "Você não tem permissões para expulsar este membro.",
+    "missingClientPermissions": "Eu não tenho permissões para expulsar este membro."
+  },
+  "unban": {
+    "author": "Kael | Desbanimento",
+    "description": "{{- author}} desbaniu **{{- user}}**!",
+    "isNotBanned": "Este usuário não está banido no servidor."
+  },
+  "ban": {
+    "reason": "Motivo",
+    "author": "Kael | Banimento",
+    "noReason": "Não Especificado",
+    "description": "{{- author}} baniu **{{- member}}**!",
+    "missingUserPermissions": "Você não tem permissões para banir este membro.",
+    "missingClientPermissions": "Eu não tenho permissões para banir este membro.",
+    "private": {
+      "title": "Notificação | {{- guild}}",
+      "reasonTitle": "Motivo do banimento",
+      "description": "Você foi banido de nosso servidor. Por favor, entre em contanto com {{- author}}, caso seja um engano."
+    }
+  },
+  "freeze": {
+    "time": "Tempo",
+    "reason": "Motivo",
+    "noReason": "Não Especificado",
+    "author": "Kael | Congelamento",
+    "description": "{{- author}} congelou **{{- member}}**!",
+    "missingUserPermissions": "Você não tem permissões para banir este membro.",
+    "missingClientPermissions": "Eu não tenho permissões para banir este membro.",
+    "invalidRole": "O cargo configurado é inválido, configure um cargo válido para prosseguir!",
+    "hasInFreeze": "<:FreezeKaelAlteration:723060626322358272> O membro mencionado já encontra-se congelado.",
+    "noChannel": "É necessário definir um canal de congelamento parar que os motivos sejam enviado no mesmo.",
+    "noRole": "É necessário definir um cargo de congelamento para que eu possa adicionar no infrator durante a execução do comando",
+    "role": {
+      "success": "O cargo de congelamento foi definido para <@&{{role}}>.",
+      "missingRole": "Defina o cargo que o usuário receberá durante o congelamento."
+    },
+    "channel": {
+      "success": "O canal de congelamento foi definido em <#{{channel}}>.",
+      "missingChannel": "Defina o canal que o usuário poderá visualizar durante o congelamento."
+    },
+    "status": {
+      "timeLeft": "Tempo restante",
+      "author": "Congelamento | Status",
+      "noFreezed": "<@{{user}}> não encontra-se congelado neste servidor."
+    }
+  },
+  "purge": {
+    "author": "Kael | Limpeza",
+    "hasOccurredError": "Ocorreu um erro!",
+    "numberLimit": "Eu só posso limpar de 2 a 150 mensagens por vez!",
+    "cooldown": "Aguarde alguns segundos para executar o comando novamente!",
+    "cleanId": "<:Limpeza:507408323306323970> limpei a mensagem do id: `{{id}}`.",
+    "cleaned": "<:Limpeza:507408323306323970> limpei **{{size}}** mensagens do canal.",
+    "noArgsProvided": "Você precisa dizer o número de mensagens ou o **id** da mensagem pra eu apagar."
+  },
+  "autorole": {
+    "reset": {
+      "success": "Resetei todas as configurações do autocargo."
+    },
+    "remove": {
+      "notRole": "<@&{{role}}> não está na lista do autocargo.",
+      "success": "Você removeu <@&{{role}}> da lista de autocargo do servidor."
+    },
+    "add": {
+      "hasRole": "<@&{{role}}> já está na lista do autocargo.",
+      "limit": "Você atingiu o limite máximo de 20 cargos ativos no autocargo. Para adicionar mais acesse meu painel.",
+      "success": "Você adicionou <@&{{role}}> a lista de autocargo do servidor."
+    },
+    "list": {
+      "noRoles": "Nenhum cargo adicionado.",
+      "author": "Autorole | Lista de cargos",
+      "title": "Cargos definido como autocargo do servidor **({{size}})**:"
+    },
+    "help": {
+      "author": "Ajuda | Autocargo",
+      "addTitle": "autocargo add <@cargo>",
+      "add": "Para adicionar um cargo a lista de autocargos do servidor.",
+      "removeTitle": "autocargo remover <@cargo>",
+      "remove": "Para remover um cargo a lista de autocargos do servidor.",
+      "listTitle": "autocargo lista",
+      "list": "Para visualizar a lista de cargos ativos com função autocargo no servidor.",
+      "resetTitle": "autocargo resetar",
+      "reset": "Para resetar a lista de cargos com função autocargo do servidor."
+    }
+  },
+  "count": {
+    "reset": {
+      "success": "Resetei todas as configurações do contador."
+    },
+    "channel": {
+      "success": "O canal do contador foi definido em <#{{channel}}>.",
+      "missingChannel": "Defina o canal que o contador será executado."
+    },
+    "text": {
+      "success": "Mensagem do contador definada como: ```{{- text}}```",
+      "missingText": "Defina a mensagem do contador. **Utilize:** [kael] como parâmetro na sua mensagem para identificar onde o contador deve aparecer."
+    },
+    "model": {
+      "missingModel": "Defina o modelo do contador.",
+      "noModel": "Modelo de contador não encontrado.",
+      "success": "Contador definido como **{{model}}**"
+    },
+    "models": {
+      "author": "Contador | Modelos",
+      "default": "Padrões cores sólidas",
+      "animate": "Animados Platina e Lotus",
+      "animate2": "Animados Cobalto e Moinho",
+      "special": "Animados Especiais",
+      "holiday": "Modelos de eventos",
+      "partners": "Modelos para parceiros",
+      "coming": "**Em breve...**"
+    },
+    "test": {
+      "author": "Contador | Testar",
+      "modelTitle": "Estilo do contador",
+      "textTitle": "Mensagem do contador",
+      "channelTitle": "Canal do contador",
+      "noModel": "Modelo de contador não definido.",
+      "noChannel": "Canal do contador não definido.",
+      "noText": "Mensagem do contador não definida."
+    },
+    "help": {
+      "author": "Ajuda | Contador",
+      "description": "Use [kael] na mensagem como parâmetro do contador.",
+      "exampleTitle": "Exemplo",
+      "exampleDesc": "Somos mais [kael] de membros, obrigado!",
+      "textTitle": "contador texto <mensagem>",
+      "textDescription": "Para definir o texto do contador.",
+      "channelTitle": "contador canal <#mencionar canal>",
+      "channelDescription": "Para definir o canal do contador.",
+      "modelTitle": "contador modelo <id do modelo>",
+      "modelDescription": "Para definir o modelo/estilo do contador.",
+      "modelsTitle": "contador modelos",
+      "modelsDescription": "Para visualizar os modelos do contador.",
+      "resetTitle": "contador resetar",
+      "resetDescription": "Para resetar as configurações do contador."
+    }
+  },
+  "colorrole": {
+    "missingPermissions": "O cargo inserido não pode ser gerenciado por mim, mova meu cargo acima do que deseja mudar a cor.",
+    "success": "A cor do cargo foi alterada com sucesso."
+  },
+  "reputation": {
+    "cooldown": "Dê outro ponto de reputação em **{{time}}**.",
+    "success": "<:Rep:507421776054321152> **|** {{- author}} deu um ponto de reputação em **{{user}}**."
+  },
+  "perfection": {
+    "cooldown": "Dê outro ponto de perfeição em **{{time}}**.",
+    "success": "<:Perf:507419390732402688> **|** {{- author}} deu um ponto de perfeição em **{{user}}**."
+  },
+  "charisma": {
+    "cooldown": "Dê outro ponto de carisma em **{{time}}**.",
+    "success": "<:Car:507423088233676811> **|** {{- author}} deu um ponto de carisma em **{{user}}**."
+  },
+  "intelligence": {
+    "cooldown": "Dê outro ponto de inteligência em **{{time}}**.",
+    "success": "<:Int:507421511737409536> **|** {{- author}} deu um ponto de inteligência em **{{user}}**."
+  },
+  "allpoints": {
+    "author": "Kael | Superpontos",
+    "pointsTitle": "Pontos recebidos",
+    "cooldown": "Dê superpontos novamente em **{{time}}**.",
+    "notHaveKoins": "Você não tem koins suficientes para executar o comando.",
+    "title": "<:kaelsuperpoints:745503523030171738> **|** {{- author}} deu superpontos em **{{user}}**.",
+    "points": "<:Rep:507421776054321152> 1 ponto de reputação.\n<:Perf:507419390732402688> 1 ponto de perfeição.\n<:Car:507423088233676811> 1 ponto de carisma.\n<:Int:507421511737409536> 1 ponto de inteligência."
+  },
+  "ranking": {
+    "author": "Ajuda | Lista de classificação",
+    "reputation": {
+      "title": "Top 5 global reputações",
+      "usageTitle": "ranking rep",
+      "usageDescription": "Para visualizar o top 5 global de reputações."
+    },
+    "perfection": {
+      "title": "Top 5 global perfeições",
+      "usageTitle": "ranking perf",
+      "usageDescription": "Para visualizar o top 5 global de perfeições."
+    },
+    "charisma": {
+      "title": "Top 5 global carismáticos",
+      "usageTitle": "ranking char",
+      "usageDescription": "Para visualizar o top 5 global de carismáticos."
+    },
+    "intelligence": {
+      "title": "Top 5 global inteligências",
+      "usageTitle": "ranking int",
+      "usageDescription": "Para visualizar o top 5 global de inteligências."
+    }
+  },
+  "daily": {
+    "author": "Kael | Daily",
+    "success": "Você recebeu <:koins:710557837776126053> **{{koins}}** koins do seu bônus diário.",
+    "cooldown": "<:KaelRelogio:707764843720998923> Pegue seu bônus diário novamente em **{{time}}**.",
+    "extract": "Você recebeu {{koins}} koins no seu bônus diário em {{time}}."
+  },
+  "work": {
+    "author": "Kael | Trabalho",
+    "cooldown": "<:KaelRelogio:707764843720998923> Trabalhe novamente em **{{time}}**.",
+    "extract": "Você recebeu {{koins}} koins no seu trabalho em {{time}}."
+  },
+  "balance": {
+    "wallet": "Na carteira",
+    "bank": "Saldo líquido | Banco",
+    "passEventTitle": "Passes de evento",
+    "author": "Kael | Saldo",
+    "total": "Você possui um total de <:koins:710557837776126053> **{{total}}** Koins.",
+    "passEvent": "<:kaelpass:747641058695053393> Você possui **0** passes de evento."
+  },
+  "deposit": {
+    "author": "Kael | Depósito",
+    "invalidBalance": "Você não possui saldo para efetuar o depósito!",
+    "extract": "Você depositou {{koins}} koins no seu banco em {{time}}.",
+    "failed": "Você não possui Koins o suficiente para efetuar o depósito.",
+    "success": "Depositei um total de <:koins:710557837776126053> **{{koins}}** Koins no seu banco.",
+    "all": {
+      "extract": "Você depositou {{koins}} koins no seu banco em {{time}}.",
+      "invalidBalance": "Você não possui Koins o suficiente para efetuar o depósito.",
+      "success": "Depositei um total de <:koins:710557837776126053> **{{koins}}** Koins no seu banco."
+    },
+    "help": {
+      "bankAll": "depositar tudo",
+      "author": "Ajuda | Depósito",
+      "bankDp": "depositar <valor>",
+      "bank": "Deposite todo seu saldo em koins.",
+      "bankdps": "Deposite um valor específico no seu banco."
+    }
+  },
+  "withdraw": {
+    "author": "Kael | Recibo",
+    "total": "Total retirado",
+    "approved": "Saque aprovado",
+    "noBalance": "Você não possui saldo para fazer um saque.",
+    "extract": "Você pagou {{koins}} para seu banco em {{time}}.",
+    "extractBank": "Você efetuou um saque de {{koins}} em {{time}}.",
+    "noBalanceRate": "Você não possui saldo líquido com taxa para realizar o saque.",
+    "approvedDescription": "Você sacou <:koins:710557837776126053> **{{koins}}** Koins.",
+    "description": "Saque solitado de <:koins:710557837776126053> **{{koins}}** Koins com taxa de {{percent}}%. Você pagou ao banco <:koins:710557837776126053> **{{pay}}** Koins."
+  },
+  "transfer": {
+    "author": "Kael | Recibo",
+    "total": "Total movimentado",
+    "approved": "Transferência aprovada",
+    "noTransfer": "Você não possui saldo para realizar uma transferência.",
+    "extractBank": "Você movimentou na sua conta um total de {{koins}} koins em {{time}}.",
+    "noTransferRate": "Você não possui saldo líquido mais taxa para realizar está transferência.",
+    "extract": "Você transferiu {{koins}} koins para {{- user.username}}#{{user.discriminator}} ({{user.id}}) em {{time}}.",
+    "approvedDescription": "Transferência realizada de <:koins:710557837776126053> **{{koins}}** Koins para **{{- user.username}}#{{user.discriminator}}**.",
+    "description": "Transferência solicitada de <:koins:710557837776126053> **{{value}}** Koins com taxa de {{percent}}%. Taxa aplicada de <:koins:710557837776126053> **{{pay}}** Koins.",
+    "server": {
+      "extractBank": "Você movimentou na sua conta um total de {{koins}} em {{time}}.",
+      "extract": "Você transferiu {{koins}} koins para o banco {{- server.name}} ({{server.id}}) em {{time}}.",
+      "success": "Você transferiu <:koins:710557837776126053> **{{koins}}** koins para o banco **{{- bank}}**!"
+    }
+  },
+  "steal": {
+    "author": "Kael | Roubo",
+    "noMoney": "Você tentou roubar **{{- user}}**, porém, o mesmo estava sem dinheiro! Você perdeu {{koins}}.",
+    "cooldown": "Foi por pouco hoje, roube novamente em **{{time}}**."
+  },
+  "bank": {
+    "author": "Banco | {{- guild}}",
+    "description": "O Banco possui um total de <:koins:710557837776126053> **{{koins}}** Koins."
+  },
+  "tankionline": {
+    "playerNotFound": "Nenhum jogador foi encontrado.",
+    "moreProfile": "Veja Completo",
+    "name": "Nome",
+    "premium": "Conta premium",
+    "kills": "Abates",
+    "deaths": "Mortes",
+    "rank": "Classificação",
+    "golds": "Caixas de ouro capturadas",
+    "crystals": "Cristais conquistados",
+    "kd": "Abates x Mortes (KD)"
+  },
+  "randomname": {
+    "title": "Personagem de Harry Potter:"
+  },
+  "houseroles": {
+    "help": {
+      "author": "Ajuda | Cargo da casa",
+      "gryffindorTitle": "houseroles grifinoria <@menção>",
+      "slytherinTitle": "houseroles sonserina <@menção>",
+      "ravenclawTitle": "houseroles corvinal <@menção>",
+      "hufflepuffTitle": "houseroles lufa-lufa <@menção>",
+      "resetTitle": "houseroles <nome da casa> resetar",
+      "reset": "Para resetar/redefinir o cargo de uma casa.",
+      "gryffindor": "Para definir o cargo da casa Grifinória.",
+      "slytherin": "Para definir o cargo da casa Sonserina.",
+      "ravenclaw": "Para definir o cargo da casa Corvinal.",
+      "hufflepuff": "Para definir o cargo da casa Lufa-Lufa."
+    },
+    "gryffindor": {
+      "reset": "Resetei o cargo da casa Grifinória.",
+      "has": "Este cargo já está definido em alguma casa.",
+      "success": "O cargo <@&{{role}}> foi definido a casa Grifinória.",
+      "noHouse": "Você deve definir um cargo/tag representando a casa **Grifinória**."
+    },
+    "slytherin": {
+      "reset": "Resetei o cargo da casa Sonserina.",
+      "has": "Este cargo já está definido em alguma casa.",
+      "success": "O cargo <@&{{role}}> foi definido a casa Sonserina.",
+      "noHouse": "Você deve definir um cargo/tag representando a casa **Sonserina**."
+    },
+    "ravenclaw": {
+      "reset": "Resetei o cargo da casa Corvinal.",
+      "has": "Este cargo já está definido em alguma casa.",
+      "success": "O cargo <@&{{role}}> foi definido a casa Corvinal.",
+      "noHouse": "Você deve definir um cargo/tag representando a casa **Corvinal**."
+    },
+    "hufflepuff": {
+      "reset": "Resetei o cargo da casa Lufa-Lufa.",
+      "has": "Este cargo já está definido em alguma casa.",
+      "success": "O cargo <@&{{role}}> foi definido a casa Lufa-Lufa.",
+      "noHouse": "Você deve definir um cargo/tag representando a casa **Lufa-Lufa**."
+    },
+    "rolesUndefined": {
+      "gryffindor": "O cargo da casa **Grifinória** não foi definido no servidor.",
+      "slytherin": "O cargo da casa **Sonserina** não foi definido no servidor.",
+      "ravenclaw": "O cargo da casa **Corvinal** não foi definido no servidor.",
+      "hufflepuff": "O cargo da casa **Lufa-Lufa** não foi definido no servidor."
+    }
+  },
+  "list": {
+    "embedTitle": "Cargos de cada casa"
+  },
+  "points": {
+    "embedTitle": "Pontuações das casas",
+    "gryffindor": "<:gryffindor:707480788760789042> Grifinória",
+    "slytherin": "<:slytherin:707480727792648203> Sonserina",
+    "ravenclaw": "<:havenclaw:707480727960158218> Corvinal",
+    "hufflepuff": "<:hufflepuff:707480728002363393> Lufa-Lufa",
+    "pts": " pontos",
+    "pt": "1 ponto"
+  },
+  "housepoints": {
+    "missingRemove": "Defina a quantidade de pontos a remover da casa.",
+    "removeHelp": {
+      "title": "Como remover pontos a uma casa?",
+      "gryffindorTitle": "rvp grifinoria <quantidade de pontos>",
+      "slytherinTitle": "rvp sonserina <quantidade de pontos>",
+      "ravenclawTitle": "rvp corvinal <quantidade de pontos>",
+      "hufflepuffTitle": "rvp lufa-lufa <quantidade de pontos>",
+      "gryffindor": "Para remover pontos a casa Grifinória.",
+      "slytherin": "Para remover pontos a casa Sonserina.",
+      "ravenclaw": "Para remover pontos a casa Corvinal.",
+      "hufflepuff": "Para remover pontos a casa Lufa-Lufa."
+    },
+    "help": {
+      "author": "Ajuda | Pontos da casa",
+      "gryffindorTitle": "housepoints grifinoria <quantidade de pontos>",
+      "slytherinTitle": "housepoints sonserina <quantidade de pontos>",
+      "ravenclawTitle": "housepoints corvinal <quantidade de pontos>",
+      "hufflepuffTitle": "housepoints lufa-lufa <quantidade de pontos>",
+      "gryffindor": "Para adicionar pontos a casa Grifinória.",
+      "slytherin": "Para adicionar pontos a casa Sonserina.",
+      "ravenclaw": "Para adicionar pontos a casa Corvinal.",
+      "hufflepuff": "Para adicionar pontos a casa Lufa-Lufa."
+    },
+    "gryffindor": {
+      "addSuccess": "Você deu mais **{{points}}** pontos para a casa Grifinória.",
+      "missingPoints": "Defina a quantidade de pontos a dar a casa **Grifinória**.",
+      "removeSuccess": "Você removeu mais **{{points}}** pontos da casa Grifinória.",
+      "missingRemove": "Defina a quantidade de pontos a remover da casa **Grifinória**.",
+      "removeLimit": "Você só pode remover até cinco milhões (5.000.000) de pontos por comando!"
+    },
+    "slytherin": {
+      "addSuccess": "Você deu mais **{{points}}** pontos para a casa Sonserina.",
+      "missingPoints": "Defina a quantidade de pontos a dar a casa **Sonserina**.",
+      "removeSuccess": "Você removeu mais **{{points}}** pontos da casa Sonserina.",
+      "missingRemove": "Defina a quantidade de pontos a remover da casa **Sonserina**.",
+      "removeLimit": "Você só pode remover até cinco milhões (5.000.000) de pontos por comando!"
+    },
+    "ravenclaw": {
+      "addSuccess": "Você deu mais **{{points}}** pontos para a casa Corvinal.",
+      "missingPoints": "Defina a quantidade de pontos a dar a casa **Corvinal**.",
+      "removeSuccess": "Você removeu mais **{{points}}** pontos da casa Corvinal.",
+      "missingRemove": "Defina a quantidade de pontos a remover da casa **Corvinal**.",
+      "removeLimit": "Você só pode remover até cinco milhões (5.000.000) de pontos por comando!"
+    },
+    "hufflepuff": {
+      "addSuccess": "Você deu mais **{{points}}** pontos para a casa Lufa-Lufa.",
+      "missingPoints": "Defina a quantidade de pontos a dar a casa **Lufa-Lufa**.",
+      "removeSuccess": "Você removeu mais **{{points}}** pontos da casa Lufa-Lufa.",
+      "missingRemove": "Defina a quantidade de pontos a remover da casa **Lufa-Lufa**.",
+      "removeLimit": "Você só pode remover até cinco milhões (5.000.000) de pontos por comando!"
+    }
+  },
+  "rolldice": {
+    "author": "Kael | Rolar dados",
+    "first": "Primeiro dado",
+    "second": "Segundo dado",
+    "dropped": "Caiu no lado **{{drop}}**"
+  }
+}

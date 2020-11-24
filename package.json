@@ -1,0 +1,38 @@
+{
+  "name": "root",
+  "version": "1.0.0",
+  "license": "AGPL-3.0",
+  "private": true,
+  "scripts": {
+    "fix": "yarn lint:fix && yarn prettier:fix",
+    "clean": "lerna exec --parallel -- rimraf build typings",
+    "build:all": "node scripts/build --all",
+    "build:packages": "node scripts/build",
+    "build:packages:watch": "lerna exec --parallel --scope @packages/* -- ttsc -w",
+    "lint": "eslint ./ --ext js,ts",
+    "lint:fix": "eslint ./ --ext js,ts --fix",
+    "prettier": "prettier --check ./**/*.{js,ts}",
+    "prettier:fix": "prettier --write ./**/*.{js,ts}"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kaeltec/client.git"
+  },
+  "workspaces": {
+    "packages": [
+      "clients/*",
+      "packages/*"
+    ]
+  },
+  "devDependencies": {
+    "@hitechline/eslint-config-node": "1.0.2",
+    "@types/node": "14.14.9",
+    "@zerollup/ts-transform-paths": "1.7.18",
+    "eslint": "7.14.0",
+    "lerna": "3.22.1",
+    "prettier": "2.2.0",
+    "rimraf": "3.0.2",
+    "ttypescript": "1.5.12",
+    "typescript": "4.1.2"
+  }
+}

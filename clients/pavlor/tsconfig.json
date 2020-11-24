@@ -1,0 +1,22 @@
+{
+  "extends": "../../tsconfig.json",
+  "include": ["src/**/*", "../../@types"],
+  "compilerOptions": {
+    "baseUrl": "src",
+    "outDir": "build",
+    "declarationDir": "typings",
+    "paths": {
+      "@root/*": ["*"],
+      "@core/*": ["core/*"],
+      "@config/*": ["config/*"],
+      "@helpers/*": ["helpers/*"],
+      "@services/*": ["services/*"],
+      "@managers/*": ["managers/*"]
+    },
+    "plugins": [
+      {
+        "transform": "@zerollup/ts-transform-paths"
+      }
+    ]
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "extends": "../../tsconfig.json",
+  "include": ["src/**/*", "../../@types/lib/adonis-node-websocket.d.ts"],
+  "compilerOptions": {
+    "baseUrl": "src",
+    "outDir": "build",
+    "declarationDir": "typings"
+  }
+}

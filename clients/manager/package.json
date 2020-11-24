@@ -1,0 +1,32 @@
+{
+  "name": "@clients/manager",
+  "version": "1.0.0",
+  "license": "AGPL-3.0",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "ts-node-dev --respawn --no-notify --transpile-only -r tsconfig-paths/register src/index.ts"
+  },
+  "repository": {
+    "type": "git",
+    "directory": "clients/manager",
+    "url": "git+https://github.com/kaeltec/client.git"
+  },
+  "dependencies": {
+    "@kaelbot/constants": "1.0.4",
+    "@kaelbot/database": "1.0.4",
+    "@packages/api-websocket": "*",
+    "@packages/logger": "*",
+    "@packages/loop": "*",
+    "@packages/timeout": "*",
+    "@packages/utils": "*",
+    "async": "^3.2.0",
+    "discord.js": "^12.5.0",
+    "dotenv": "8.2.0",
+    "moment": "2.29.1"
+  },
+  "devDependencies": {
+    "@types/async": "^3.2.4",
+    "ts-node-dev": "1.0.0",
+    "tsconfig-paths": "3.9.0"
+  }
+}

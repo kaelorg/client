@@ -1,0 +1,11 @@
+{
+  "name": "@clients/pavlor",
+  "version": "1.0.0",
+  "license": "AGPL-3.0",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "directory": "clients/pavlor",
+    "url": "git+https://github.com/kaeltec/client.git"
+  }
+}
