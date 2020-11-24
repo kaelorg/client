@@ -1,4 +1,5 @@
 import logger from '@packages/logger';
+import { captureException } from '@sentry/node';
 import { ClientUser } from 'discord.js';
 import { inject, injectable } from 'tsyringe';
 
@@ -23,6 +24,7 @@ class WebSocketEvent extends EventStructure {
 
   @listener('error')
   protected onError(message: any): void {
+    captureException(message);
     debug('event:error', message);
   }
 
