@@ -1,7 +1,5 @@
 function makeDate(): string {
-  const brazilianDate = new Date().toLocaleString('pt-BR');
-
-  return new Date(brazilianDate).toISOString();
+  return new Date(Date.now()).toISOString();
 }
 
 export default makeDate;
