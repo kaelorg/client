@@ -1,7 +1,5 @@
 function makeDate(): string {
-  const brazilianDate = new Date().toLocaleString('pt-BR', {
-    timeZone: 'America/Sao_Paulo',
-  });
+  const brazilianDate = new Date().toLocaleString('pt-BR');
 
   return new Date(brazilianDate).toISOString();
 }
