@@ -1,6 +1,6 @@
 import logger from '@packages/logger';
 import { captureException } from '@sentry/node';
-import { ClientUser } from 'discord.js';
+import { ClientUser, PresenceData } from 'discord.js';
 import { inject, injectable } from 'tsyringe';
 
 import listener from '@app/decorators/event/listener';
@@ -42,13 +42,16 @@ class WebSocketEvent extends EventStructure {
 
   @listener('shardReady')
   protected async onShardReady(shardId: number): Promise<void> {
-    const { ws, user } = this.client;
+    const { ws, user, options } = this.client;
     const clientUser = user as ClientUser;
 
+    const presence = makePresence(
+      Math.max(shardId, 1),
+      options.shardCount ?? ws.shards.size,
+    );
+
     await clientUser.setPresence(
-      Object.assign(makePresence(Math.max(shardId, 1), ws.shards.size), {
-        shardID: shardId,
-      }),
+      Object.assign<PresenceData, PresenceData>(presence, { shardID: shardId }),
     );
   }
 }
