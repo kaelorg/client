@@ -9,6 +9,7 @@ import {
   PartialTextBasedChannelFields,
 } from 'discord.js';
 import { TFunction } from 'i18next';
+import moment from 'moment';
 
 import { ChannelExtended } from './extendeds/guild';
 
@@ -16,6 +17,7 @@ export interface CommandExecuteData extends CommandExecuteDataStructure {}
 
 export interface CommandExecuteDataStructure {
   t: TFunction;
+  m: typeof moment;
 
   args: string[];
   document: DocumentResponse<GuildDocument>;
