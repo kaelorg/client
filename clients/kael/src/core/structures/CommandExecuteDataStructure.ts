@@ -1,8 +1,11 @@
 import { GuildDocument, DocumentResponse } from '@kaelbot/database';
 import { Message, User, Guild, GuildMember } from 'discord.js';
 import { TFunction } from 'i18next';
+import moment from 'moment';
 
 import I18nextAdapter from '@core/adapters/I18nextAdapter';
+
+import makeMomentByLocale from '@utils/moment/makeMomentByLocale';
 
 import {
   ChannelExtended,
@@ -11,6 +14,8 @@ import {
 
 class CommandExecuteDataStructure implements ICommandExecuteDataStructure {
   public readonly t: TFunction;
+
+  public readonly m: typeof moment;
 
   public readonly args: string[];
 
@@ -30,6 +35,8 @@ class CommandExecuteDataStructure implements ICommandExecuteDataStructure {
     const i18next = new I18nextAdapter();
 
     this.t = i18next.getFixedT(document.language);
+    this.m = makeMomentByLocale(document.language);
+
     this.args = args;
     this.document = document;
 
