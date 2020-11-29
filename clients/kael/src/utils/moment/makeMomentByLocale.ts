@@ -1,3 +1,4 @@
+import { cloneObject } from '@packages/utils';
 import moment, {
   localeData,
   Locale,
@@ -9,7 +10,7 @@ import moment, {
 import config from './config';
 import isValidLocale from './isValidLocale';
 
-function makeMomentByLocale(locale?: string): typeof moment {
+function makeMomentByLocale(locale: string): typeof moment {
   const myMoment = (
     inp?: MomentInput,
     format?: MomentFormatSpecification,
@@ -19,7 +20,7 @@ function makeMomentByLocale(locale?: string): typeof moment {
     let myLocale: Locale = localeData(config.defaultLocale);
     const momentGenerated = moment(inp, format, language, strict);
 
-    if (locale && isValidLocale(locale)) {
+    if (isValidLocale(locale)) {
       myLocale = localeData(locale);
     }
 
@@ -27,6 +28,21 @@ function makeMomentByLocale(locale?: string): typeof moment {
     return momentGenerated;
   };
 
+  const momentCloned = cloneObject(moment);
+  const properties = Object.getOwnPropertyNames(
+    momentCloned,
+  ).reduce<PropertyDescriptorMap>(
+    (descriptor, property) =>
+      Object.assign(descriptor, {
+        [property]: Object.getOwnPropertyDescriptor(
+          momentCloned,
+          property,
+        ) as PropertyDescriptor,
+      }),
+    {},
+  );
+
+  Object.defineProperties(myMoment, properties);
   return myMoment as typeof moment;
 }
 
