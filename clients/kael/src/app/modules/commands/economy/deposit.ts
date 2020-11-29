@@ -1,4 +1,3 @@
-import moment from 'moment';
 import { inject, injectable } from 'tsyringe';
 
 import NumberArgument from '@app/arguments/NumberArgument';
@@ -25,7 +24,7 @@ class DepositCommand extends CommandStructure {
   }
 
   public async execute(
-    { t, author, channel }: CommandExecuteData,
+    { t, m, author, channel }: CommandExecuteData,
     value?: number,
   ) {
     if (!value) {
@@ -53,12 +52,6 @@ class DepositCommand extends CommandStructure {
       if (koins >= value) {
         await this.client.database.users.update(author.id, {
           $inc: { 'social.koins': -value, 'social.bank': value },
-          $push: {
-            'social.extract': `${t('commands:deposit.extract', {
-              time: moment().format('LLL'),
-              koins: Number(value).toLocaleString(),
-            })}`,
-          },
         });
 
         channel.send(

@@ -1,5 +1,4 @@
 import { User } from 'discord.js';
-import moment from 'moment';
 import { inject, injectable } from 'tsyringe';
 
 import UserArgument from '@app/arguments/UserArgument';
@@ -27,7 +26,10 @@ class CharismaCommand extends CommandStructure {
     super();
   }
 
-  public async execute({ t, author, channel }: CommandExecuteData, user: User) {
+  public async execute(
+    { t, m, author, channel }: CommandExecuteData,
+    user: User,
+  ) {
     const cooldownCharisma = await this.client.database.users
       .findOne(author.id)
       .then(({ social }) => social.cooldown_charisma);
@@ -52,7 +54,7 @@ class CharismaCommand extends CommandStructure {
       channel.error(
         author,
         t('commands:charisma.cooldown', {
-          time: moment
+          time: m
             .duration(usageCooldown - (Date.now() - cooldownCharisma))
             .format('h[h] m[m] s[s]'),
         }),

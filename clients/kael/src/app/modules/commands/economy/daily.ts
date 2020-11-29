@@ -1,4 +1,3 @@
-import moment from 'moment';
 import { inject, injectable } from 'tsyringe';
 
 import command from '@app/decorators/command/command';
@@ -24,7 +23,7 @@ class DailyCommand extends CommandStructure {
     super();
   }
 
-  public async execute({ t, author, channel }: CommandExecuteData) {
+  public async execute({ t, m, author, channel }: CommandExecuteData) {
     const cooldownDaily = await this.client.database.users
       .findOne(author.id)
       .then(({ social }) => social.cooldown_daily);
@@ -47,7 +46,7 @@ class DailyCommand extends CommandStructure {
       channel.error(
         author,
         t('commands:daily.cooldown', {
-          time: moment
+          time: m
             .duration(usageCooldown - (Date.now() - cooldownDaily))
             .format('h[h] m[m] s[s]'),
         }),

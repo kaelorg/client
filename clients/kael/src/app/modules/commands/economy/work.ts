@@ -1,5 +1,4 @@
 import { Texts } from '@kaelbot/constants';
-import moment from 'moment';
 import { inject, injectable } from 'tsyringe';
 
 import command from '@app/decorators/command/command';
@@ -25,7 +24,13 @@ class WorkCommand extends CommandStructure {
     super();
   }
 
-  public async execute({ t, document, author, channel }: CommandExecuteData) {
+  public async execute({
+    t,
+    m,
+    document,
+    author,
+    channel,
+  }: CommandExecuteData) {
     const cooldownWork = await this.client.database.users
       .findOne(author.id)
       .then(({ social }) => social.cooldown_work);
@@ -51,7 +56,7 @@ class WorkCommand extends CommandStructure {
       channel.error(
         author,
         t('commands:work.cooldown', {
-          time: moment
+          time: m
             .duration(usageCooldown - (Date.now() - cooldownWork))
             .format('h[h] m[m] s[s]'),
         }),

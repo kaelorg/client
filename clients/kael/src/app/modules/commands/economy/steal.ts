@@ -1,7 +1,6 @@
 import { Texts } from '@kaelbot/constants';
 import randomSuccess from '@packages/random-success';
 import { User } from 'discord.js';
-import moment from 'moment';
 import { inject, injectable } from 'tsyringe';
 
 import UserArgument from '@app/arguments/UserArgument';
@@ -30,7 +29,7 @@ class StealCommand extends CommandStructure {
   }
 
   public async execute(
-    { t, document, author, channel }: CommandExecuteData,
+    { t, m, document, author, channel }: CommandExecuteData,
     user: User,
   ) {
     const [
@@ -102,7 +101,7 @@ class StealCommand extends CommandStructure {
       channel.error(
         author,
         t('commands:steal.cooldown', {
-          time: moment
+          time: m
             .duration(usageCooldown - (Date.now() - cooldownSteal))
             .format('h[h] m[m] s[s]'),
         }),

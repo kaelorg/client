@@ -1,5 +1,4 @@
 import { User } from 'discord.js';
-import moment from 'moment';
 
 import UserArgument from '@app/arguments/UserArgument';
 import command from '@app/decorators/command/command';
@@ -14,7 +13,7 @@ import { CommandExecuteData } from '@interfaces';
 })
 class UserInfoCommand extends CommandStructure {
   public async execute(
-    { t, author, channel, guild }: CommandExecuteData,
+    { t, m, author, channel, guild }: CommandExecuteData,
     user: User = author,
   ) {
     const embed = this.embed(author)
@@ -23,7 +22,7 @@ class UserInfoCommand extends CommandStructure {
       .addField('ID', `\`\`\`${user.id}\`\`\``, false)
       .addField(
         t('commands:userinfo.createdAt'),
-        moment(user.createdAt).format('LLLL'),
+        m(user.createdAt).format('LLLL'),
       );
 
     const member =
@@ -38,7 +37,7 @@ class UserInfoCommand extends CommandStructure {
         )
         .addField(
           t('commands:userinfo.joinedAt'),
-          moment(member.joinedAt).format('LLLL'),
+          m(member.joinedAt).format('LLLL'),
         );
     }
 

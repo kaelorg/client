@@ -1,5 +1,4 @@
 import { User } from 'discord.js';
-import moment from 'moment';
 import { inject, injectable } from 'tsyringe';
 
 import UserArgument from '@app/arguments/UserArgument';
@@ -28,7 +27,10 @@ class AllPointsCommand extends CommandStructure {
     super();
   }
 
-  public async execute({ t, author, channel }: CommandExecuteData, user: User) {
+  public async execute(
+    { t, m, author, channel }: CommandExecuteData,
+    user: User,
+  ) {
     const {
       koins,
       cooldown_all_points: cooldownAllPoints,
@@ -79,7 +81,7 @@ class AllPointsCommand extends CommandStructure {
       channel.error(
         author,
         t('commands:allpoints.cooldown', {
-          time: moment
+          time: m
             .duration(UsageCooldown - (Date.now() - cooldownAllPoints))
             .format('h[h] m[m] s[s]'),
         }),

@@ -1,5 +1,4 @@
 import { User } from 'discord.js';
-import moment from 'moment';
 import { inject, injectable } from 'tsyringe';
 
 import UserArgument from '@app/arguments/UserArgument';
@@ -27,7 +26,10 @@ class PerfectionCommand extends CommandStructure {
     super();
   }
 
-  public async execute({ t, author, channel }: CommandExecuteData, user: User) {
+  public async execute(
+    { t, m, author, channel }: CommandExecuteData,
+    user: User,
+  ) {
     const cooldownPerfection = await this.client.database.users
       .findOne(author.id)
       .then(({ social }) => social.cooldown_perfection);
@@ -52,7 +54,7 @@ class PerfectionCommand extends CommandStructure {
       channel.error(
         author,
         t('commands:perfection.cooldown', {
-          time: moment
+          time: m
             .duration(usageCooldown - (Date.now() - cooldownPerfection))
             .format('h[h] m[m] s[s]'),
         }),

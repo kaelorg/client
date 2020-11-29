@@ -1,5 +1,4 @@
 import { GuildMember } from 'discord.js';
-import moment from 'moment';
 
 import MemberArgument from '@app/arguments/MemberArgument';
 import command from '@app/decorators/command/command';
@@ -17,7 +16,7 @@ import { CommandExecuteData } from '@interfaces';
 })
 class ServerBoosterCommand extends CommandStructure {
   public execute(
-    { t, author, channel, member: authorMember }: CommandExecuteData,
+    { t, m, author, channel, member: authorMember }: CommandExecuteData,
     member: GuildMember = authorMember as GuildMember,
   ) {
     if (!member.premiumSince) {
@@ -31,7 +30,7 @@ class ServerBoosterCommand extends CommandStructure {
           .setAuthor(member.user.username, member.user.displayAvatarURL())
           .setDescription(
             t('commands:serverbooster.time', {
-              time: moment(member.premiumSinceTimestamp).format('LLLL'),
+              time: m(member.premiumSinceTimestamp).format('LLLL'),
             }),
           ),
       );

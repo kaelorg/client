@@ -1,7 +1,6 @@
 import { GuildUserVanity } from '@kaelbot/database';
 import APIWebSocket from '@packages/api-websocket';
 import { GuildMember } from 'discord.js';
-import moment from 'moment';
 import { inject, injectable } from 'tsyringe';
 
 import MemberArgument from '@app/arguments/MemberArgument';
@@ -29,7 +28,7 @@ class AddVanityCommand extends CommandStructure {
   }
 
   public execute(
-    { t, document, author, channel, guild }: CommandExecuteData,
+    { t, m, document, author, channel, guild }: CommandExecuteData,
     member: GuildMember,
   ) {
     const vanityUsers = document.vanity.users;
@@ -67,7 +66,7 @@ class AddVanityCommand extends CommandStructure {
           .addField(t('commands:vanity.add.role'), `<@&${role}>`)
           .addField(
             t('commands:vanity.add.timeLeft'),
-            moment
+            m
               .duration(time - (Date.now() - timestamp))
               .format('M[m] d[d] h[h] m[m] s[s]'),
           ),
