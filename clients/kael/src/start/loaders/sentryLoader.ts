@@ -4,7 +4,7 @@ import { init } from '@sentry/node';
 /**
  * Loads sentry Client.
  */
-function i18nextLoader(): void {
+function sentryLoader(): void {
   if (process.env.NODE_ENV !== 'production' || !process.env.SENTRY_DSN) {
     return;
   }
