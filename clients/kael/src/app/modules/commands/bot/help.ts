@@ -1,5 +1,4 @@
 import { Urls } from '@kaelbot/constants';
-import { ClientUser } from 'discord.js';
 import { inject, injectable } from 'tsyringe';
 
 import command from '@app/decorators/command/command';
@@ -24,7 +23,7 @@ class HelpCommand extends CommandStructure {
   }
 
   public execute({ t, author, channel }: CommandExecuteData) {
-    const clientUser = this.client.user as ClientUser;
+    const clientUser = this.client.user;
     const fields = t<Field[]>('commands:help.fields', { returnObjects: true });
 
     channel.send(

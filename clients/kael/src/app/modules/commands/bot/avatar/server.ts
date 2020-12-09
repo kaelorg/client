@@ -1,4 +1,4 @@
-import { Guild, ClientUser } from 'discord.js';
+import { Guild } from 'discord.js';
 import { inject, injectable } from 'tsyringe';
 
 import command from '@app/decorators/command/command';
@@ -35,7 +35,7 @@ class ServerAvatarCommand extends CommandStructure {
         .setTitle(t('commands:avatar.titleServer', { guild: server.name }))
         .setImage(
           server.iconURL({ format: 'webp', size: 2048, dynamic: true }) ||
-            (this.client.user as ClientUser).displayAvatarURL({
+            this.client.user.displayAvatarURL({
               format: 'webp',
               size: 2048,
               dynamic: true,

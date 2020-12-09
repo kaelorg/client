@@ -1,5 +1,4 @@
 import { Emojis } from '@kaelbot/constants';
-import { ClientUser } from 'discord.js';
 import { inject, injectable } from 'tsyringe';
 
 import command from '@app/decorators/command/command';
@@ -45,7 +44,7 @@ class ReputationRankingCommand extends CommandStructure {
     channel.send(
       this.embed(author)
         .setTitle(t('commands:ranking.reputation.title'))
-        .setThumbnail((this.client.user as ClientUser).displayAvatarURL())
+        .setThumbnail(this.client.user.displayAvatarURL())
         .setDescription(
           users.map(
             ({ user, reputation }, index) =>
