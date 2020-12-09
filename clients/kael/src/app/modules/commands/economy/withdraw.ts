@@ -1,3 +1,4 @@
+import { KaelDatabase } from '@kaelbot/database';
 import { inject, injectable } from 'tsyringe';
 
 import NumberArgument from '@app/arguments/NumberArgument';
@@ -6,7 +7,7 @@ import CommandStructure from '@core/structures/abstract/CommandStructure';
 
 import { Namespace } from '@config/containers';
 
-import { Client, CommandExecuteData } from '@interfaces';
+import { CommandExecuteData } from '@interfaces';
 
 @injectable()
 @command({
@@ -17,8 +18,8 @@ import { Client, CommandExecuteData } from '@interfaces';
 })
 class WithdrawCommand extends CommandStructure {
   constructor(
-    @inject(Namespace.Client)
-    private client: Client,
+    @inject(Namespace.Database)
+    private database: KaelDatabase,
   ) {
     super();
   }
@@ -27,7 +28,7 @@ class WithdrawCommand extends CommandStructure {
     { t, author, channel, guild }: CommandExecuteData,
     value: number,
   ) {
-    const bank = await this.client.database.users
+    const bank = await this.database.users
       .findOne(author.id)
       .then(({ social }) => social.bank);
 
@@ -38,10 +39,10 @@ class WithdrawCommand extends CommandStructure {
     if (bank >= pay) {
       await Promise.all([
         guild &&
-          this.client.database.guilds.update(guild.id, {
+          this.database.guilds.update(guild.id, {
             $inc: { 'social.bank': rate },
           }),
-        this.client.database.users.update(author.id, {
+        this.database.users.update(author.id, {
           $inc: { 'social.bank': -pay, 'social.koins': value },
         }),
       ]);

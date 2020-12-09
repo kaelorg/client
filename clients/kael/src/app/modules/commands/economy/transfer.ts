@@ -1,3 +1,4 @@
+import { KaelDatabase } from '@kaelbot/database';
 import { User } from 'discord.js';
 import { inject, injectable } from 'tsyringe';
 
@@ -8,7 +9,7 @@ import CommandStructure from '@core/structures/abstract/CommandStructure';
 
 import { Namespace } from '@config/containers';
 
-import { Client, CommandExecuteData } from '@interfaces';
+import { CommandExecuteData } from '@interfaces';
 
 @injectable()
 @command({
@@ -22,8 +23,8 @@ import { Client, CommandExecuteData } from '@interfaces';
 })
 class TransferCommand extends CommandStructure {
   constructor(
-    @inject(Namespace.Client)
-    private client: Client,
+    @inject(Namespace.Database)
+    private database: KaelDatabase,
   ) {
     super();
   }
@@ -33,7 +34,7 @@ class TransferCommand extends CommandStructure {
     user: User,
     value: number,
   ) {
-    const bank = await this.client.database.users
+    const bank = await this.database.users
       .findOne(author.id)
       .then(({ social }) => social.bank);
 
@@ -44,13 +45,13 @@ class TransferCommand extends CommandStructure {
     if (bank >= pay) {
       await Promise.all([
         guild &&
-          this.client.database.guilds.update(guild.id, {
+          this.database.guilds.update(guild.id, {
             $inc: { 'social.bank': rate },
           }),
-        this.client.database.users.update(user.id, {
+        this.database.users.update(user.id, {
           $inc: { 'social.bank': value },
         }),
-        this.client.database.users.update(author.id, {
+        this.database.users.update(author.id, {
           $inc: { 'social.bank': -pay },
         }),
       ]);

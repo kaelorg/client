@@ -1,3 +1,4 @@
+import { KaelDatabase } from '@kaelbot/database';
 import { inject, injectable } from 'tsyringe';
 
 import NumberArgument from '@app/arguments/NumberArgument';
@@ -6,7 +7,7 @@ import CommandStructure from '@core/structures/abstract/CommandStructure';
 
 import { Namespace } from '@config/containers';
 
-import { Client, CommandExecuteData } from '@interfaces';
+import { CommandExecuteData } from '@interfaces';
 
 @injectable()
 @command({
@@ -17,8 +18,8 @@ import { Client, CommandExecuteData } from '@interfaces';
 })
 class DepositCommand extends CommandStructure {
   constructor(
-    @inject(Namespace.Client)
-    private client: Client,
+    @inject(Namespace.Database)
+    private database: KaelDatabase,
   ) {
     super();
   }
@@ -45,12 +46,12 @@ class DepositCommand extends CommandStructure {
           ),
       );
     } else {
-      const koins = await this.client.database.users
+      const koins = await this.database.users
         .findOne(author.id)
         .then(({ social }) => social.koins);
 
       if (koins >= value) {
-        await this.client.database.users.update(author.id, {
+        await this.database.users.update(author.id, {
           $inc: { 'social.koins': -value, 'social.bank': value },
         });
 

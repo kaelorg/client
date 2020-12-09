@@ -1,4 +1,5 @@
 import { Texts } from '@kaelbot/constants';
+import { KaelDatabase } from '@kaelbot/database';
 import { inject, injectable } from 'tsyringe';
 
 import command from '@app/decorators/command/command';
@@ -6,7 +7,7 @@ import CommandStructure from '@core/structures/abstract/CommandStructure';
 
 import { Namespace } from '@config/containers';
 
-import { Client, CommandExecuteData } from '@interfaces';
+import { CommandExecuteData } from '@interfaces';
 
 const usageCooldown = 21600000; // 6 Hours
 
@@ -18,8 +19,8 @@ const usageCooldown = 21600000; // 6 Hours
 })
 class WorkCommand extends CommandStructure {
   constructor(
-    @inject(Namespace.Client)
-    private client: Client,
+    @inject(Namespace.Database)
+    private database: KaelDatabase,
   ) {
     super();
   }
@@ -31,7 +32,7 @@ class WorkCommand extends CommandStructure {
     author,
     channel,
   }: CommandExecuteData) {
-    const cooldownWork = await this.client.database.users
+    const cooldownWork = await this.database.users
       .findOne(author.id)
       .then(({ social }) => social.cooldown_work);
 
@@ -41,7 +42,7 @@ class WorkCommand extends CommandStructure {
         credit > 1 ? 'Koins' : 'Koin'
       }`;
 
-      await this.client.database.users.update(author.id, {
+      await this.database.users.update(author.id, {
         'social.cooldown_work': Date.now(),
         '$inc': { 'social.koins': credit },
       });

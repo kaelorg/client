@@ -1,3 +1,4 @@
+import { KaelDatabase } from '@kaelbot/database';
 import { Role } from 'discord.js';
 import { inject, injectable } from 'tsyringe';
 
@@ -7,7 +8,7 @@ import CommandStructure from '@core/structures/abstract/CommandStructure';
 
 import { Namespace } from '@config/containers';
 
-import { Client, CommandExecuteData } from '@interfaces';
+import { CommandExecuteData } from '@interfaces';
 
 @injectable()
 @command({
@@ -19,8 +20,8 @@ import { Client, CommandExecuteData } from '@interfaces';
 })
 class RemoveAutoRoleCommand extends CommandStructure {
   constructor(
-    @inject(Namespace.Client)
-    private client: Client,
+    @inject(Namespace.Database)
+    private database: KaelDatabase,
   ) {
     super();
   }
@@ -39,7 +40,7 @@ class RemoveAutoRoleCommand extends CommandStructure {
       return;
     }
 
-    await this.client.database.guilds.update(guild.id, {
+    await this.database.guilds.update(guild.id, {
       $pull: { 'auto_role.roles': role.id },
     });
 

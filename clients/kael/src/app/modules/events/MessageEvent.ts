@@ -1,4 +1,8 @@
-import { GuildDocument, DocumentResponse } from '@kaelbot/database';
+import {
+  KaelDatabase,
+  GuildDocument,
+  DocumentResponse,
+} from '@kaelbot/database';
 import { Message, ClientUser } from 'discord.js';
 import { container, inject, injectable } from 'tsyringe';
 
@@ -16,18 +20,20 @@ class MessageEvent extends EventStructure {
   constructor(
     @inject(Namespace.Client)
     private client: Client,
+    @inject(Namespace.Database)
+    private database: KaelDatabase,
   ) {
     super();
   }
 
   @listener('message')
   protected async onMessage(message: Message): Promise<void> {
-    const { database } = this.client;
-    const { content, author, guild } = message;
-
-    if (author.bot) {
+    if (message.author.bot) {
       return;
     }
+
+    const { client, database } = this;
+    const { content, guild } = message;
 
     let document: DocumentResponse<GuildDocument> =
       database.guilds.defaultValue;
@@ -36,7 +42,7 @@ class MessageEvent extends EventStructure {
       document = await database.retrieveConnection('guild', guild.id);
     }
 
-    const clientId = (this.client.user as ClientUser).id;
+    const clientId = (client.user as ClientUser).id;
 
     const prefixes = [document.prefix, `<@!${clientId}>`, `<@${clientId}>`];
     const usedPrefix = prefixes.find(myPrefix => content.startsWith(myPrefix));

@@ -1,3 +1,4 @@
+import { KaelDatabase } from '@kaelbot/database';
 import { User } from 'discord.js';
 import { container, inject, injectable } from 'tsyringe';
 
@@ -9,7 +10,7 @@ import CommandStructure from '@core/structures/abstract/CommandStructure';
 
 import { Namespace } from '@config/containers';
 
-import { Client, CommandExecuteData } from '@interfaces';
+import { CommandExecuteData } from '@interfaces';
 
 @injectable()
 @command({
@@ -23,8 +24,8 @@ import { Client, CommandExecuteData } from '@interfaces';
 })
 class ProfileCommand extends CommandStructure {
   constructor(
-    @inject(Namespace.Client)
-    private client: Client,
+    @inject(Namespace.Database)
+    private database: KaelDatabase,
   ) {
     super();
   }
@@ -35,7 +36,7 @@ class ProfileCommand extends CommandStructure {
   ) {
     const userMakeBadges = container.resolve(UserMakeBadgesService);
 
-    const { social } = await this.client.database.users.findOne(user.id);
+    const { social } = await this.database.users.findOne(user.id);
     const badges = await userMakeBadges.execute(user);
 
     const profile = await profileTemplate(

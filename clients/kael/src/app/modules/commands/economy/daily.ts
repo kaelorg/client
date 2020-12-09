@@ -1,3 +1,4 @@
+import { KaelDatabase } from '@kaelbot/database';
 import { inject, injectable } from 'tsyringe';
 
 import command from '@app/decorators/command/command';
@@ -5,7 +6,7 @@ import CommandStructure from '@core/structures/abstract/CommandStructure';
 
 import { Namespace } from '@config/containers';
 
-import { Client, CommandExecuteData } from '@interfaces';
+import { CommandExecuteData } from '@interfaces';
 
 const usageCooldown = 43200000; // 12 Hours
 
@@ -17,21 +18,21 @@ const usageCooldown = 43200000; // 12 Hours
 })
 class DailyCommand extends CommandStructure {
   constructor(
-    @inject(Namespace.Client)
-    private client: Client,
+    @inject(Namespace.Database)
+    private database: KaelDatabase,
   ) {
     super();
   }
 
   public async execute({ t, m, author, channel }: CommandExecuteData) {
-    const cooldownDaily = await this.client.database.users
+    const cooldownDaily = await this.database.users
       .findOne(author.id)
       .then(({ social }) => social.cooldown_daily);
 
     if (Date.now() - cooldownDaily > usageCooldown) {
       const credit = Math.floor(Math.random() * (400 - 5) + 5);
 
-      await this.client.database.users.update(author.id, {
+      await this.database.users.update(author.id, {
         'social.cooldown_daily': Date.now(),
         '$inc': { 'social.koins': credit },
       });
