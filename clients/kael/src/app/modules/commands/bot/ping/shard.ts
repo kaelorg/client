@@ -1,4 +1,3 @@
-import { WebSocketShard } from 'discord.js';
 import { inject, injectable } from 'tsyringe';
 
 import NumberArgument from '@app/arguments/NumberArgument';
@@ -36,8 +35,8 @@ class ShardPingCommand extends CommandStructure {
     } else {
       channel.send(
         t<string>('commands:ping.shard.ping', {
-          shard: shardId,
-          response: (this.client.ws.shards.get(shardId) as WebSocketShard).ping,
+          shard: shardNumber,
+          response: shard.ping,
         }),
       );
     }

@@ -3,7 +3,7 @@ import {
   GuildDocument,
   DocumentResponse,
 } from '@kaelbot/database';
-import { Message, ClientUser } from 'discord.js';
+import { Message } from 'discord.js';
 import { container, inject, injectable } from 'tsyringe';
 
 import listener from '@app/decorators/event/listener';
@@ -42,7 +42,7 @@ class MessageEvent extends EventStructure {
       document = await database.retrieveConnection('guild', guild.id);
     }
 
-    const clientId = (client.user as ClientUser).id;
+    const clientId = client.user.id;
 
     const prefixes = [document.prefix, `<@!${clientId}>`, `<@${clientId}>`];
     const usedPrefix = prefixes.find(myPrefix => content.startsWith(myPrefix));

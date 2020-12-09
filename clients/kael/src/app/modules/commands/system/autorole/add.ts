@@ -37,7 +37,7 @@ class AddAutoRoleCommand extends CommandStructure {
       return;
     }
 
-    if (roles.some(r => r === role.id)) {
+    if (roles.some(roleId => roleId === role.id)) {
       channel.error(
         author,
         t('commands:autorole.add.hasRole', { role: role.id }),

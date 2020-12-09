@@ -1,4 +1,3 @@
-import { ClientUser } from 'discord.js';
 import { inject, injectable } from 'tsyringe';
 
 import command from '@app/decorators/command/command';
@@ -25,7 +24,7 @@ class RankingCommand extends CommandStructure {
   public execute({ t, author, channel }: CommandExecuteData) {
     channel.send(
       this.embed(author)
-        .setThumbnail((this.client.user as ClientUser).displayAvatarURL())
+        .setThumbnail(this.client.user.displayAvatarURL())
         .setAuthor(t('commands:ranking.author'), author.displayAvatarURL())
         .addField(
           t('commands:ranking.reputation.usageTitle'),
