@@ -1,3 +1,4 @@
+import { KaelDatabase } from '@kaelbot/database';
 import { User } from 'discord.js';
 import { inject, injectable } from 'tsyringe';
 
@@ -7,7 +8,7 @@ import CommandStructure from '@core/structures/abstract/CommandStructure';
 
 import { Namespace } from '@config/containers';
 
-import { Client, CommandExecuteData } from '@interfaces';
+import { CommandExecuteData } from '@interfaces';
 
 const UsageValue = 1000;
 const UsageCooldown = 18000000; // 5 Hours
@@ -21,8 +22,8 @@ const UsageCooldown = 18000000; // 5 Hours
 })
 class AllPointsCommand extends CommandStructure {
   constructor(
-    @inject(Namespace.Client)
-    private client: Client,
+    @inject(Namespace.Database)
+    private database: KaelDatabase,
   ) {
     super();
   }
@@ -34,7 +35,7 @@ class AllPointsCommand extends CommandStructure {
     const {
       koins,
       cooldown_all_points: cooldownAllPoints,
-    } = await this.client.database.users
+    } = await this.database.users
       .findOne(author.id)
       .then(({ social }) => social);
 
@@ -45,11 +46,11 @@ class AllPointsCommand extends CommandStructure {
       }
 
       await Promise.all([
-        this.client.database.users.update(author.id, {
+        this.database.users.update(author.id, {
           'social.cooldown_all_points': Date.now(),
           '$inc': { 'social.koins': -UsageValue },
         }),
-        this.client.database.users.update(user.id, {
+        this.database.users.update(user.id, {
           $inc: {
             'social.charisma': 1,
             'social.reputation': 1,

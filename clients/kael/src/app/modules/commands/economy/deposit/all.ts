@@ -1,3 +1,4 @@
+import { KaelDatabase } from '@kaelbot/database';
 import { inject, injectable } from 'tsyringe';
 
 import command from '@app/decorators/command/command';
@@ -5,7 +6,7 @@ import CommandStructure from '@core/structures/abstract/CommandStructure';
 
 import { Namespace } from '@config/containers';
 
-import { Client, CommandExecuteData } from '@interfaces';
+import { CommandExecuteData } from '@interfaces';
 
 @injectable()
 @command({
@@ -16,19 +17,19 @@ import { Client, CommandExecuteData } from '@interfaces';
 })
 class AllDepositCommand extends CommandStructure {
   constructor(
-    @inject(Namespace.Client)
-    private client: Client,
+    @inject(Namespace.Database)
+    private database: KaelDatabase,
   ) {
     super();
   }
 
   public async execute({ t, author, channel }: CommandExecuteData) {
-    const koins = await this.client.database.users
+    const koins = await this.database.users
       .findOne(author.id)
       .then(({ social }) => social.koins);
 
     if (koins >= 1) {
-      await this.client.database.users.update(author.id, {
+      await this.database.users.update(author.id, {
         $inc: { 'social.koins': -koins, 'social.bank': koins },
       });
 

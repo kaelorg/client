@@ -1,4 +1,5 @@
 import { Texts } from '@kaelbot/constants';
+import { KaelDatabase } from '@kaelbot/database';
 import randomSuccess from '@packages/random-success';
 import { User } from 'discord.js';
 import { inject, injectable } from 'tsyringe';
@@ -9,7 +10,7 @@ import CommandStructure from '@core/structures/abstract/CommandStructure';
 
 import { Namespace } from '@config/containers';
 
-import { Client, CommandExecuteData } from '@interfaces';
+import { CommandExecuteData } from '@interfaces';
 
 const usageCooldown = 21600000; // 6 Hours
 
@@ -22,8 +23,8 @@ const usageCooldown = 21600000; // 6 Hours
 })
 class StealCommand extends CommandStructure {
   constructor(
-    @inject(Namespace.Client)
-    private client: Client,
+    @inject(Namespace.Database)
+    private database: KaelDatabase,
   ) {
     super();
   }
@@ -36,12 +37,8 @@ class StealCommand extends CommandStructure {
       { intelligence, cooldown_steal: cooldownSteal },
       userKoins,
     ] = await Promise.all([
-      this.client.database.users
-        .findOne(author.id)
-        .then(({ social }) => social),
-      this.client.database.users
-        .findOne(user.id)
-        .then(({ social }) => social.koins),
+      this.database.users.findOne(author.id).then(({ social }) => social),
+      this.database.users.findOne(user.id).then(({ social }) => social.koins),
     ]);
 
     if (Date.now() - cooldownSteal > usageCooldown) {
@@ -59,10 +56,10 @@ class StealCommand extends CommandStructure {
       if (success) {
         if (userKoins >= credits) {
           await Promise.all([
-            this.client.database.users.update(author.id, {
+            this.database.users.update(author.id, {
               $inc: { 'social.koins': credits },
             }),
-            this.client.database.users.update(user.id, {
+            this.database.users.update(user.id, {
               $inc: { 'social.koins': -credits },
             }),
           ]);
@@ -89,7 +86,7 @@ class StealCommand extends CommandStructure {
         );
       }
 
-      await this.client.database.users.update(author.id, {
+      await this.database.users.update(author.id, {
         'social.cooldown_steal': Date.now(),
         ...(!success || !(userKoins >= credits)
           ? { $inc: { 'social.koins': -credits } }

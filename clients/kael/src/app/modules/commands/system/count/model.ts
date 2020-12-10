@@ -1,4 +1,5 @@
 import CountHelper from '@clients/manager/build/helpers/CountHelper';
+import { KaelDatabase } from '@kaelbot/database';
 import { inject, injectable } from 'tsyringe';
 
 import StringArgument from '@app/arguments/StringArgument';
@@ -7,7 +8,7 @@ import CommandStructure from '@core/structures/abstract/CommandStructure';
 
 import { Namespace } from '@config/containers';
 
-import { Client, CommandExecuteData } from '@interfaces';
+import { CommandExecuteData } from '@interfaces';
 
 @injectable()
 @command({
@@ -19,8 +20,8 @@ import { Client, CommandExecuteData } from '@interfaces';
 })
 class ModelCountCommand extends CommandStructure {
   constructor(
-    @inject(Namespace.Client)
-    private client: Client,
+    @inject(Namespace.Database)
+    private database: KaelDatabase,
   ) {
     super();
   }
@@ -36,7 +37,7 @@ class ModelCountCommand extends CommandStructure {
       return;
     }
 
-    await this.client.database.guilds.update(guild.id, {
+    await this.database.guilds.update(guild.id, {
       'count.type': countModel.id,
     });
 
