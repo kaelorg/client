@@ -37,7 +37,7 @@
     "tsyringe": "4.4.0"
   },
   "devDependencies": {
-    "@types/async": "3.2.4",
+    "@types/async": "3.2.5",
     "@types/debug": "4.1.5",
     "@types/i18next-fs-backend": "1.0.0",
     "@types/jest": "26.0.19",
