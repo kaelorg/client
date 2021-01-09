@@ -13,40 +13,40 @@ import {
 } from '@interfaces';
 
 class CommandExecuteDataStructure implements ICommandExecuteDataStructure {
-  public readonly t: TFunction;
-
-  public readonly m: typeof moment;
-
   public readonly args: string[];
 
   public readonly document: DocumentResponse<GuildDocument>;
 
-  public readonly author: User;
-
-  public readonly guild: Guild;
-
-  public readonly member: GuildMember;
-
   public readonly message: Message;
 
-  public readonly channel: ChannelExtended;
-
   constructor({ args, document, message }: Data) {
-    const i18next = new I18nextAdapter();
-
-    this.t = i18next.getFixedT(document.language);
-    this.m = makeMomentByLocale(document.language);
-
     this.args = args;
-    this.document = document;
-
-    this.author = message.author;
-
-    this.guild = message.guild as Guild;
-    this.member = message.member as GuildMember;
-
     this.message = message;
-    this.channel = message.channel as ChannelExtended;
+    this.document = document;
+  }
+
+  get t(): TFunction {
+    return new I18nextAdapter().getFixedT(this.document.language);
+  }
+
+  get m(): typeof moment {
+    return makeMomentByLocale(this.document.language);
+  }
+
+  get author(): User {
+    return this.message.author;
+  }
+
+  get guild(): Guild {
+    return <Guild>this.message.guild;
+  }
+
+  get member(): GuildMember {
+    return <GuildMember>this.message.member;
+  }
+
+  get channel(): ChannelExtended {
+    return <ChannelExtended>this.message.channel;
   }
 }
 
