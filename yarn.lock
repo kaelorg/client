@@ -600,17 +600,17 @@
     "@types/yargs" "^15.0.0"
     chalk "^4.0.0"
 
-"@kaelbot/constants@1.0.4", "@kaelbot/constants@^1.0.2", "@kaelbot/constants@^1.0.4":
-  version "1.0.4"
-  resolved "https://registry.yarnpkg.com/@kaelbot/constants/-/constants-1.0.4.tgz#94b3983e218998b11fe830e9a58e9806461ef429"
-  integrity sha512-a+Ya+Qd7af4HZLXDJPhsUiCiahL0QpmnyaecC6NrIkn84rRUjEIME+s27bCa34VwTK5YJDt/EwndltizqImscw==
+"@kaelbot/constants@1.0.5", "@kaelbot/constants@^1.0.5":
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/@kaelbot/constants/-/constants-1.0.5.tgz#981181967ab5dacbe75d0bbd37b42f99f2c70c4f"
+  integrity sha512-oJf0h1b4yK1U7MdfGwCuLLPEhsU5g954EK5LlsWm3a92Q+VYGwOuINzXoxFBxcocEEEoQwyqQ/iCHsYJMLvySQ==
 
-"@kaelbot/database@1.0.4":
-  version "1.0.4"
-  resolved "https://registry.yarnpkg.com/@kaelbot/database/-/database-1.0.4.tgz#f29681f0cc48585613b6302c7b5d9a1be8c82b33"
-  integrity sha512-xMZ8vW2GYH7pVeG4qZugmoq9416A07nV4vslflzsGs509aVZCgqD8UWl6lOVgQ14n/u2sc7qsEHFEDS2xaOd2Q==
+"@kaelbot/database@1.0.5":
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/@kaelbot/database/-/database-1.0.5.tgz#e89dd4d1f521c546bf8718cfbaaccc9cb5f0cea5"
+  integrity sha512-Um4iCHMv4LAfvF2JFJPM2VHMJe2+mkqsIzap8Yekt3maBZq0qNyyReX/fAV78SPlfz3YAayjyAqjBiZJ5PhyiA==
   dependencies:
-    "@kaelbot/constants" "^1.0.4"
+    "@kaelbot/constants" "^1.0.5"
     mongodb "^3.6.0"
     mongoose "^5.9.28"
 
@@ -1808,7 +1808,7 @@ acorn@^7.1.1, acorn@^7.4.0:
   resolved "https://registry.yarnpkg.com/acorn/-/acorn-7.4.1.tgz#feaed255973d2e77555b83dbc08851a6c63520fa"
   integrity sha512-nQyp0o1/mNdbTO1PO6kHkwSrmgZ0MT/jCCpNiwbUjGoRN4dlBhqJtoQuCnEOKzgTVwg0ZWiCoQy6SxMebQVh8A==
 
-adonis-node-websocket@^0.0.2-b:
+adonis-node-websocket@0.0.2-b:
   version "0.0.2-b"
   resolved "https://registry.yarnpkg.com/adonis-node-websocket/-/adonis-node-websocket-0.0.2-b.tgz#ae2f2009abf45eccc12d874fba65d3c43fbcb669"
   integrity sha512-2b4HJGJTAoglbFqjs7vJwBpNGIMOIoQgFKhuH9R4htYnXNKgGd55HabXJWRYSoXL6oIrzsu69NOE4umBFgZagw==
@@ -2963,7 +2963,7 @@ debug@3.1.0:
   dependencies:
     ms "2.0.0"
 
-debug@4, debug@4.3.1, debug@^4.0.1, debug@^4.1.0, debug@^4.1.1, debug@^4.3.1:
+debug@4, debug@4.3.1, debug@^4.0.1, debug@^4.1.0, debug@^4.1.1:
   version "4.3.1"
   resolved "https://registry.yarnpkg.com/debug/-/debug-4.3.1.tgz#f0d229c505e0c6d8c49ac553d1b13dc183f6b2ee"
   integrity sha512-doEwdvm4PCeK4K3RQN2ZC2BYUBaxwLARCqZmMjtF8a51J2Rb0xpVloFRnCODwqjpwnAoao4pelN8l3RJdv3gRQ==
