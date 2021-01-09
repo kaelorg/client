@@ -11,8 +11,8 @@
     "url": "git+https://github.com/kaeltec/client.git"
   },
   "dependencies": {
-    "@kaelbot/constants": "^1.0.2",
-    "adonis-node-websocket": "^0.0.2-b",
-    "debug": "^4.3.1"
+    "@kaelbot/constants": "1.0.5",
+    "adonis-node-websocket": "0.0.2-b",
+    "debug": "4.3.1"
   }
 }

@@ -12,8 +12,8 @@
     "url": "git+https://github.com/kaeltec/client.git"
   },
   "dependencies": {
-    "@kaelbot/constants": "1.0.4",
-    "@kaelbot/database": "1.0.4",
+    "@kaelbot/constants": "1.0.5",
+    "@kaelbot/database": "1.0.5",
     "@packages/api-websocket": "*",
     "@packages/logger": "*",
     "@packages/loop": "*",
