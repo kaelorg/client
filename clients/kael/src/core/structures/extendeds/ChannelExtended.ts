@@ -1,8 +1,10 @@
 import {
   User,
+  Guild,
   Message,
   Structures,
-  PartialTextBasedChannelFields,
+  GuildChannel,
+  TextBasedChannelFields,
 } from 'discord.js';
 
 import { extendAll } from '@utils/extend';
@@ -16,7 +18,28 @@ import ClientEmbedStructure from '../ClientEmbedStructure';
 
 class ChannelExtendedStructure
   implements Pick<IChannelExtendedStructure, 'error' | 'send'> {
-  public send!: PartialTextBasedChannelFields['send'];
+  public type!: keyof typeof ChannelType;
+
+  public guild!: Guild;
+
+  public send!: TextBasedChannelFields['send'];
+
+  public permissionsFor!: GuildChannel['permissionsFor'];
+
+  get canSendMessages(): boolean {
+    if (this.type === 'dm') {
+      return true;
+    }
+
+    if (['text', 'news'].includes(this.type)) {
+      return !!(
+        this.guild.me &&
+        this.permissionsFor(this.guild.me)?.has('SEND_MESSAGES')
+      );
+    }
+
+    return false;
+  }
 
   public error(
     author: User,

@@ -9,6 +9,7 @@ export type ChannelExtendedStructure = (
   | DMChannel
   | NewsChannel
 ) & {
+  canSendMessages: boolean;
   error(
     user: User,
     content: string | ChannelExtendedErrorContentOptions,
