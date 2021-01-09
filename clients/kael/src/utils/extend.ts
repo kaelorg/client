@@ -1,3 +1,16 @@
+const OWN_FILTER_PROPERTIES = [
+  'name',
+  'bind',
+  'call',
+  'apply',
+  'caller',
+  'length',
+  'toString',
+  'prototype',
+  'arguments',
+  'constructor',
+];
+
 function extend<T extends Extensible>(
   extensible: T,
   extender: GetExtender<T>,
@@ -13,45 +26,21 @@ export function extendAll<T extends Extensible>(
     constructor(...props: any[]) {
       super(...props);
 
-      const extendersInstantiated = extenders.map(
-        Extender => new Extender(...props),
-      );
+      for (const extender of extenders) {
+        const properties = Object.getOwnPropertyDescriptors(extender.prototype);
 
-      for (const extender of extendersInstantiated) {
-        const properties = Reflect.ownKeys(extender).concat(
-          Reflect.ownKeys(Reflect.getPrototypeOf(extender)),
-        );
-
-        properties.forEach(prop => {
-          if (
-            /^(constructor|prototype|arguments|caller|name|bind|call|apply|toString|length)$/.test(
-              prop as any,
-            )
-          ) {
-            return;
-          }
-
-          let propertyDescriptor = Reflect.getOwnPropertyDescriptor(
-            extender,
-            prop,
-          );
-
-          if (!propertyDescriptor) {
-            const propertyGetted = Reflect.get(extender, prop);
-
-            propertyDescriptor = {
-              value:
-                typeof propertyGetted === 'function'
-                  ? propertyGetted
-                  : propertyGetted,
-            };
-          }
-
-          Object.defineProperty(this, prop, propertyDescriptor);
+        OWN_FILTER_PROPERTIES.forEach(property => {
+          delete properties[property];
         });
+
+        Object.defineProperties(this, properties);
       }
     }
   }
+
+  Object.defineProperty(SuperExtensible, 'name', {
+    value: Extensible.name,
+  });
 
   return SuperExtensible;
 }
