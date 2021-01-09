@@ -16,4 +16,4 @@ function sentryLoader(): void {
   });
 }
 
-export default i18nextLoader;
+export default sentryLoader;
