@@ -16,15 +16,19 @@ import CommandMakeArgumentsService from './CommandMakeArgumentsService';
 
 class CommandExecuteService implements Service {
   public async execute(data: Data): Promise<void> {
-    const { args, command } = data;
-
     const commandExecuteData = new CommandExecuteDataStructure(data);
+    const { channel } = commandExecuteData;
 
-    const commandHandleTools = new CommandHandleToolsService();
-    const commandMakeArguments = new CommandMakeArgumentsService();
-    const commandGetIdentifier = new CommandGetIdentifierService();
+    if (!channel.canSendMessages) {
+      return;
+    }
 
     try {
+      const commandHandleTools = new CommandHandleToolsService();
+      const commandMakeArguments = new CommandMakeArgumentsService();
+      const commandGetIdentifier = new CommandGetIdentifierService();
+
+      const { args, command } = data;
       const {
         args: myArgs,
         command: myCommand,
@@ -42,18 +46,18 @@ class CommandExecuteService implements Service {
       // Run the command
       await myCommand.execute(commandExecuteData, ...commandArguments);
     } catch (error) {
-      if (error instanceof SendedError) {
-        const { author, channel } = commandExecuteData;
-        const message = new ClientEmbedStructure({ title: error.message })
-          .setUser(author)
-          .error();
+      captureException(error);
+      debug('command:error', error.message || error);
 
-        await channel.send(message).catch(() => {});
+      if (!(error instanceof SendedError)) {
         return;
       }
 
-      captureException(error);
-      debug('command:error', error.message || error);
+      const message = new ClientEmbedStructure({ title: error.message })
+        .setUser(commandExecuteData.author)
+        .error();
+
+      await channel.send(message).catch(() => {});
     }
   }
 }
