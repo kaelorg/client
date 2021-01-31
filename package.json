@@ -28,7 +28,7 @@
     "@hitechline/eslint-config-node": "1.1.0",
     "@types/node": "14.14.20",
     "@zerollup/ts-transform-paths": "1.7.18",
-    "eslint": "7.18.0",
+    "eslint": "7.19.0",
     "lerna": "3.22.1",
     "prettier": "2.2.1",
     "rimraf": "3.0.2",
