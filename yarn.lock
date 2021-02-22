@@ -399,10 +399,10 @@
     unique-filename "^1.1.1"
     which "^1.3.1"
 
-"@hitechline/eslint-config-node@1.1.0":
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/@hitechline/eslint-config-node/-/eslint-config-node-1.1.0.tgz#7396df5b92aa2ab31845a1138aa95a8608843217"
-  integrity sha512-8EXA6DwqBYxxkJorD6mXSFP7BKfVizSf/3hhnO8I4RZsYpN50YYhnMleWU5E/hQVMGvT/Q6MPi/anmFAOWq4xg==
+"@hitechline/eslint-config-node@1.1.4":
+  version "1.1.4"
+  resolved "https://registry.yarnpkg.com/@hitechline/eslint-config-node/-/eslint-config-node-1.1.4.tgz#8f52d2c160e897da27e6118581e9df7a5947aa4e"
+  integrity sha512-2zyL39QgOe2HSas2gaTF6Ve/gHr3CJskZhVoAxlBN1E/h8x+dzFo2kN0UvmklRyYgZzrwEsi+mIysQafobKn+g==
   dependencies:
     "@typescript-eslint/eslint-plugin" "^4.0.0"
     "@typescript-eslint/parser" "^4.0.0"
