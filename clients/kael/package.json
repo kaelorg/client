@@ -24,7 +24,7 @@
     "@packages/utils": "*",
     "@sentry/node": "6.2.0",
     "async": "3.2.0",
-    "canvas": "2.6.1",
+    "canvas": "2.7.0",
     "debug": "4.3.1",
     "discord.js": "12.5.1",
     "dotenv": "8.2.0",
