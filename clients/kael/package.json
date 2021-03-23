@@ -34,7 +34,7 @@
     "moment": "2.29.1",
     "moment-duration-format": "2.3.2",
     "reflect-metadata": "0.1.13",
-    "tsyringe": "4.4.0"
+    "tsyringe": "4.5.0"
   },
   "devDependencies": {
     "@types/async": "3.2.5",
