@@ -20,7 +20,7 @@
     "@packages/timeout": "*",
     "@packages/utils": "*",
     "async": "3.2.0",
-    "discord.js": "12.5.1",
+    "discord.js": "12.5.3",
     "dotenv": "8.2.0",
     "moment": "2.29.1"
   },
