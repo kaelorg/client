@@ -22,7 +22,7 @@
     "@packages/random-success": "*",
     "@packages/tankionline": "*",
     "@packages/utils": "*",
-    "@sentry/node": "6.2.4",
+    "@sentry/node": "6.2.5",
     "async": "3.2.0",
     "canvas": "2.7.0",
     "debug": "4.3.1",
