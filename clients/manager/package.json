@@ -25,7 +25,7 @@
     "moment": "2.29.1"
   },
   "devDependencies": {
-    "@types/async": "3.2.5",
+    "@types/async": "3.2.6",
     "ts-node-dev": "1.1.6",
     "tsconfig-paths": "3.9.0"
   }
