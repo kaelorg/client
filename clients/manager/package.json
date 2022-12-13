@@ -19,13 +19,13 @@
     "@packages/loop": "*",
     "@packages/timeout": "*",
     "@packages/utils": "*",
-    "async": "3.2.3",
+    "async": "3.2.4",
     "discord.js": "12.5.3",
     "dotenv": "10.0.0",
     "moment": "2.29.4"
   },
   "devDependencies": {
-    "@types/async": "3.2.12",
+    "@types/async": "3.2.15",
     "ts-node-dev": "1.1.8",
     "tsconfig-paths": "3.10.1"
   }
